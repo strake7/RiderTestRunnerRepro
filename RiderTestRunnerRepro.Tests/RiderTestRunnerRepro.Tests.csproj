@@ -48,12 +48,19 @@
     <Reference Include="Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\MSTest.TestFramework.2.1.1\lib\net45\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.configuration.4.0.0.0.Fakes">
       <HintPath>FakesAssemblies\System.configuration.4.0.0.0.Fakes.dll</HintPath>
     </Reference>
     <Reference Include="System.Core" />
+    <Reference Include="System.Web.Http, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.7\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="UnitTest1.cs" />
@@ -61,7 +68,18 @@
   </ItemGroup>
   <ItemGroup>
     <Fakes Include="Fakes\System.configuration.fakes" />
+    <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RiderTestRunnerRepro\RiderTestRunnerRepro.vbproj">
+      <Project>{2f7e0839-131d-4e25-ae68-af80c18dfda9}</Project>
+      <Name>RiderTestRunnerRepro</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WebApplication1\WebApplication1.csproj">
+      <Project>{82aa2dde-3fa2-4c2d-9e62-34212ca98f1b}</Project>
+      <Name>WebApplication1</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
